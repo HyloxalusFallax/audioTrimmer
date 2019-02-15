@@ -2,7 +2,21 @@ const child_process = require('child_process');
 const sub = require('subtitle')
 const fs = require('fs');
 
-const maxGap = 1000;
+var filterInt = function(value) {
+  if (/^(-|\+)?(\d+)$/.test(value))
+    return Number(value);
+  return NaN;
+}
+
+if (process.argv[2] !== undefined) {
+	var maxGap = filterInt(process.argv[2])
+	if (isNaN(maxGap)){
+		console.log('Maximum gap size is not recognized, using default (1000 ms)');
+		maxGap = 1000;
+	}
+} else {
+	var maxGap = 1000;
+}
 
 var files = [];
 var subFiles = [];
