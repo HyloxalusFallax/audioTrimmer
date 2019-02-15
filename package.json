@@ -1,0 +1,16 @@
+{
+  "name": "audio-trimmer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "HyloxalusFallax",
+  "license": "ISC",
+  "dependencies": {
+    "sox-audio": "^0.3.0",
+    "subtitle": "^2.0.1"
+  }
+}
